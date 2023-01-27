@@ -1,5 +1,8 @@
-import { app } from "./app"
-import { userRouter, postRouter } from "./routes/routes"
+import app from "./app";
+import createCharacter from "./endpoints/createCharacter";
+import deleteCharacter from "./endpoints/deleteCharacter";
+import getAllCharacters from "./endpoints/getAllCharacters";
 
-app.use('/user', userRouter)
-app.use('/post', postRouter)
+app.get('/character', getAllCharacters);
+app.put('/character', createCharacter);
+app.delete('/character/:id', deleteCharacter);
